@@ -712,7 +712,7 @@
     <axis xyz="-1 0 0"/>
     <limit effort="20" lower="0" upper="0.025" velocity="2"/>
     <dynamics damping="1.0"/>
-    <mimic joint="gripper_r_joint"/>
+    <!-- <mimic joint="gripper_r_joint"/> -->
   </joint>
   <link name="gripper_r_finger_l">
     <inertial>
@@ -739,7 +739,7 @@
   <gazebo>
     <plugin filename="libgazebo_mimic_plugin.so" name="mimic_plugin">
       <joint>gripper_r_joint</joint>
-      <mimicJoint>gripper_r_joint_m</mimicJoint>
+      <!-- <mimicJoint>gripper_r_joint_m</mimicJoint> -->
       <multiplier>1.0</multiplier>
     </plugin>
   </gazebo>
@@ -860,12 +860,12 @@
     <child link="gripper_l_center"/>
     <origin rpy="0 0 3.14159265359" xyz="0.0 0.0 0.131"/>
   </joint>
-  <link name="gripper_r_center"> </link>
+  <link name="gripper_l_center"> </link>
   <!-- Plugin for the mimic o/c joint - AFAIK, that shouldn't be necessary any more starting with Gazebo 3.0 -->
   <gazebo>
     <plugin filename="libgazebo_mimic_plugin.so" name="mimic_plugin">
       <joint>gripper_l_joint</joint>
-      <mimicJoint>gripper_l_joint_m</mimicJoint>
+      <!-- <mimicJoint>gripper_l_joint_m</mimicJoint> -->
       <multiplier>1.0</multiplier>
     </plugin>
   </gazebo>
@@ -886,4 +886,60 @@
     </actuator>
   </transmission>
   <!-- Pure YuMi URDF, with no joints connecting it to any other robot or pedestal. Neither accessories. -->
+  <!-- ====================  start of camera inserts  ======================== -->
+    <link name="left_camera">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+            <geometry>
+                <mesh filename="package://yumi_description/meshes/camera/d435.dae" /> <!-- 根据D435相机的实际尺寸调整 -->
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+            <geometry>
+                <box size="0.025 0.090 0.025"/> 
+            </geometry>
+        </collision>
+        <inertial>
+        <mass value="0.1"/>
+            <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/> 
+        </inertial>
+    </link>
+
+    <joint name="left_camera_joint" type="fixed">
+        <parent link="gripper_l_base"/>
+        <child link="left_camera"/>
+        <origin xyz="0.08 0.0 0.03" rpy="0 -1.57 3.141592653589793"/>
+    </joint>
+
+    <link name="right_camera">
+        <visual>
+            <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+            <geometry>
+                <mesh filename="package://yumi_description/meshes/camera/d435.dae" /> <!-- 根据D435相机的实际尺寸调整 -->
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+            <geometry>
+                <box size="0.025 0.090 0.025"/> 
+            </geometry>
+        </collision>
+        <inertial>
+        <mass value="0.1"/> 
+            <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial>
+    </link>
+
+    <joint name="right_camera_joint" type="fixed">
+        <parent link="gripper_r_base"/>
+        <child link="right_camera"/>
+        <origin xyz="0.08 0.0 0.03" rpy="0 -1.57 3.141592653589793"/>
+    </joint>
+
+	<!-- ====================  front and head cameras are added automatically  ======================== -->
+
+	<!-- ====================  end of camera inserts  ======================== -->
 </robot>
