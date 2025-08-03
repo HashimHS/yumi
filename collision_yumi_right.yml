@@ -1,0 +1,78 @@
+collision_spheres:
+  yumi_base_link:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_1_l:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_2_l:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_3_l:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_4_l:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_5_l:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_6_l:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_7_l:
+    - "center": [0.005, -0.002, 0.004]
+      "radius": 0.02847
+  gripper_l_base:
+    - "center": [0.001, -0.002, 0.024]
+      "radius": 0.03668
+  gripper_l_finger_l:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  gripper_l_finger_r:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_1_r:
+    - "center": [-0.024, -0.006, 0.071]
+      "radius": 0.09206
+  yumi_link_2_r:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_3_r:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_4_r:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_5_r:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_6_r:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  yumi_link_7_r:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  gripper_r_base:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  gripper_r_finger_l:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  gripper_r_finger_r:
+    - "center": [0.0, 0.00, 0.0]
+      "radius": 0.001
+  right_camera:
+    - "center": [-0.012, 0.03, 0.001]
+      "radius": 0.01544
+    - "center": [-0.011, -0.0, 0.0]
+      "radius": 0.01544
+    - "center": [-0.012, -0.031, 0.0]
+      "radius": 0.0147
+  left_camera:
+    - "center": [-0.011, -0.03, 0.0]
+      "radius": 0.01544
+    - "center": [-0.013, 0.03, -0.0]
+      "radius": 0.01544
+    - "center": [-0.013, 0.0, -0.002]
+      "radius": 0.0147
